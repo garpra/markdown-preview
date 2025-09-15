@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Topbar -->
+      <header>
+        <div class="logo">md·preview</div>
+        <div class="header-actions">
+          <span class="word-count" id="wordCount">0 words</span>
+          <button class="btn btn-ghost" id="btnClear">clear</button>
+          <button class="btn btn-ghost" id="btnCopyMd">copy md</button>
+          <button class="btn btn-accent" id="btnCopyHtml">copy html</button>
+        </div>
+      </header>
+
+      <!-- Split editor -->
+      <main>
+        <!-- Left: Editor -->
+        <div class="pane">
+          <div class="pane-header">
+            <span class="pane-label">Markdown</span>
+          </div>
+          <textarea
+            id="editor"
+            spellcheck="false"
+            placeholder="Start typing Markdown here…"
+          ></textarea>
+        </div>
+
+        <!-- Right: Preview -->
+        <div class="pane">
+          <div class="pane-header">
+            <span class="pane-label">Preview</span>
+          </div>
+          <div id="preview">
+            <div class="empty-state" id="emptyState">
+              <div class="empty-text">preview will appear here</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript kamu di sini -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
