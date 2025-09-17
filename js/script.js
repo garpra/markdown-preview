@@ -2,6 +2,7 @@ const editor = document.getElementById("editor");
 const preview = document.getElementById("preview");
 const emptyState = document.getElementById("emptyState");
 const btnClear = document.getElementById("btnClear");
+const btnCopyMd = document.getElementById("btnCopyMd");
 
 // Default content
 const SAMPLE = `# Hello, Markdown!
@@ -48,6 +49,7 @@ render();
 
 editor.addEventListener("input", render);
 btnClear.addEventListener("click", clearEditor);
+btnCopyMd.addEventListener("click", copyMarkdown);
 
 function render() {
   const md = editor.value.trim();
@@ -206,4 +208,8 @@ function clearEditor() {
   editor.value = "";
   render();
   editor.focus();
+}
+
+function copyMarkdown() {
+  navigator.clipboard.writeText(editor.value);
 }
