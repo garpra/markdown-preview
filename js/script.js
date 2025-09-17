@@ -1,6 +1,7 @@
 const editor = document.getElementById("editor");
 const preview = document.getElementById("preview");
 const emptyState = document.getElementById("emptyState");
+const btnClear = document.getElementById("btnClear");
 
 // Default content
 const SAMPLE = `# Hello, Markdown!
@@ -46,6 +47,7 @@ editor.value = SAMPLE;
 render();
 
 editor.addEventListener("input", render);
+btnClear.addEventListener("click", clearEditor);
 
 function render() {
   const md = editor.value.trim();
@@ -198,4 +200,10 @@ function escapeHtml(text) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+function clearEditor() {
+  editor.value = "";
+  render();
+  editor.focus();
 }
